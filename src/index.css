@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&family=Roboto+Slab:wght@100;300;400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 20%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 20%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 20%;
+    --primary: 82 45% 82%;
+    --primary-foreground: 0 0% 0%;
+    --secondary: 0 0% 95%;
+    --secondary-foreground: 0 0% 20%;
+    --muted: 0 0% 95%;
+    --muted-foreground: 0 0% 60%;
+    --accent: 82 45% 75%;
+    --accent-foreground: 0 0% 0%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 82 45% 82%;
+    --radius: 0.625rem;
+    
+    /* Custom Brand Colors */
+    --brand-primary: #d6e9b8;
+    --brand-primary-dark: #c3dea5;
+    --brand-secondary: #f2f2f2;
+    --brand-dark: #000000;
+    --brand-white: #ffffff;
+    --brand-text: #333333;
+    --brand-text-light: #999999;
+    
+    /* Animation Easings */
+    --ease-expo-out: cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-expo-in: cubic-bezier(0.7, 0, 0.84, 0);
+    --ease-elastic: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+    --ease-dramatic: cubic-bezier(0.87, 0, 0.13, 1);
+    --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+    --ease-liquid: cubic-bezier(0.23, 1, 0.32, 1);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Roboto Slab', serif;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full transition-all duration-300;
+    background-color: var(--brand-primary);
+    color: var(--brand-dark);
+  }
+  
+  .btn-primary:hover {
+    background-color: var(--brand-primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 40px rgba(214, 233, 184, 0.4);
+  }
+  
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full border-2 transition-all duration-300;
+    border-color: var(--brand-dark);
+    color: var(--brand-dark);
+    background: transparent;
+  }
+  
+  .btn-secondary:hover {
+    background-color: var(--brand-dark);
+    color: var(--brand-white);
+    transform: translateY(-2px);
+  }
+  
+  .eyebrow {
+    @apply text-sm font-medium tracking-widest uppercase;
+    color: var(--brand-primary-dark);
+  }
+  
+  .section-padding {
+    @apply px-4 sm:px-6 lg:px-8 xl:px-16 2xl:px-24;
+  }
+  
+  .gradient-bg {
+    background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-secondary) 50%, var(--brand-white) 100%);
+  }
+  
+  .card-hover {
+    @apply transition-all duration-300;
+  }
+  
+  .card-hover:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  }
+  
+  .text-gradient {
+    background: linear-gradient(135deg, var(--brand-dark) 0%, #555 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.6s var(--ease-expo-out) forwards;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 0.6s var(--ease-expo-out) forwards;
+  }
+  
+  .animate-slide-in-right {
+    animation: slideInRight 0.6s var(--ease-expo-out) forwards;
+  }
+  
+  .animate-scale-in {
+    animation: scaleIn 0.5s var(--ease-elastic) forwards;
+  }
+  
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .animate-pulse-glow {
+    animation: pulseGlow 3s ease-in-out infinite;
+  }
+  
+  .stagger-1 { animation-delay: 0.1s; }
+  .stagger-2 { animation-delay: 0.2s; }
+  .stagger-3 { animation-delay: 0.3s; }
+  .stagger-4 { animation-delay: 0.4s; }
+  .stagger-5 { animation-delay: 0.5s; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { 
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInRight {
+  from { 
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from { 
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to { 
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 20px rgba(214, 233, 184, 0.3); }
+  50% { box-shadow: 0 0 40px rgba(214, 233, 184, 0.6); }
+}
+
+/* Scroll reveal animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s var(--ease-expo-out), transform 0.6s var(--ease-expo-out);
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--brand-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--brand-primary-dark);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--brand-primary);
+}
