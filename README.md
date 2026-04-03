@@ -1,73 +1,106 @@
-# React + TypeScript + Vite
+# 🧘‍♂️ Life Coach Call Booking Page
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[![Vercel Deployment](https://img.shields.io/badge/Deployment-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/)
+[![React](https://img.shields.io/badge/React-2024-61DAFB?style=for-the-badge&logo=react)](https://reactjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
 
-Currently, two official plugins are available:
+A premium, high-conversion landing page designed for professional life coaches. This application features a seamless call booking system, testimonial sections, and a modern, therapeutic aesthetic to build trust and drive client engagement.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## ✨ Key Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+-   **🎯 High-Conversion Design**: Crafted for professional coaches to maximize client intake.
+-   **📅 Seamless Booking Flow**: Integrated scheduling interface for easy call booking.
+-   **📱 Fully Responsive**: Optimized for all devices, from high-end desktops to mobile phones.
+-   **💎 Premium UI Components**: Built on top of **Shadcn/UI** for a consistent and professional look.
+-   **⚡ Ultra-Fast Performance**: Powered by Vite and optimized for instantaneous load times.
+-   **🎨 Dark/Light Mode Ready**: Dynamic theme support with fluid transitions.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🛠️ Tech Stack
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+-   **Frontend**: [React 19](https://reactjs.org/) with [TypeScript](https://www.typescriptlang.org/)
+-   **Bundler**: [Vite 7](https://vitejs.dev/)
+-   **Styling**: [Tailwind CSS 3.4](https://tailwindcss.com/)
+-   **Components**: [Shadcn/UI](https://ui.shadcn.com/) (Radix UI Primitives)
+-   **Icons**: [Lucide React](https://lucide.dev/)
+-   **Animations**: [Framer Motion](https://www.framer.com/motion/)
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 🚀 Getting Started
+
+### Prerequisites
+
+-   [Node.js 20+](https://nodejs.org/)
+-   [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
+
+### Installation
+
+1.  **Clone the repository**:
+    ```bash
+    git clone https://github.com/Ismail-Khan-Dev/life-coach.git
+    cd life-coach
+    ```
+
+2.  **Install dependencies**:
+    ```bash
+    npm install
+    ```
+
+3.  **Start the development server**:
+    ```bash
+    npm run dev
+    ```
+
+---
+
+## 📂 Project Structure
+
+```text
+├── public/              # Static assets
+├── src/
+│   ├── components/      # Reusable UI components (Shadcn/UI)
+│   ├── sections/        # Main landing page sections
+│   ├── hooks/           # Custom React hooks
+│   ├── types/           # TypeScript interfaces/types
+│   ├── App.tsx          # Root application component
+│   ├── main.tsx         # Application entry point
+│   └── index.css        # Global styles & Tailwind directives
+├── tailwind.config.js   # Tailwind CSS configuration
+├── vite.config.ts       # Vite configuration
+└── package.json         # Project dependencies & scripts
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🌐 Deployment
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+This project is optimized for deployment on the **Vercel** platform.
+
+1.  Connect your GitHub repository to Vercel.
+2.  Vercel will auto-detect the Vite configuration.
+3.  Set the **Build Command** to `npm run build` and **Output Directory** to `dist`.
+4.  Deploy!
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request or open an issue for any bugs or feature requests.
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License - see the `LICENSE` file for details.
+
+---
+
+<p align="center">
+  Developed by <a href="https://github.com/Ismail-Khan-Dev">Ismail Khan</a>
+</p>
